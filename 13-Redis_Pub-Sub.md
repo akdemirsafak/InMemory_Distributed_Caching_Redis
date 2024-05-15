@@ -55,4 +55,4 @@ psubscribe mychannel:*  => komutu ile mychannel: ile başlayan tüm kanallara ab
 psubscribe mychannel.x  => komutu ile mychannel.x gibi belirli bir pattern'a abone olabiliriz. Sadece mychannel.x kanalına gelen mesajları alır.
 
 Publisher'da :
-publish mychannel.x "mesajım"  => komutu ile mychannel.x kanalına mesajım mesajını yayınlamış olduk.mychannel.* de mesajı almış oldu.
+publish mychannel.x "mesajım"  => komutu ile mychannel.x kanalına mesaj yayınlamış olduk.Mychannel.* de mesajı almış oldu.
