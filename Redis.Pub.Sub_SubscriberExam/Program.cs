@@ -1,14 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using StackExchange.Redis;
 
-Console.WriteLine("Hello, World!");
+Console.WriteLine("Hello, Im Subscriber");
 
-ConnectionMultiplexer connectionMultiplexer= await ConnectionMultiplexer.ConnectAsync("localhost:1234");
-ISubscriber subscriber= connectionMultiplexer.GetSubscriber();
+ConnectionMultiplexer connectionMultiplexer = await ConnectionMultiplexer.ConnectAsync("localhost:1234");
+ISubscriber subscriber = connectionMultiplexer.GetSubscriber();
 
-
-string message=Console.ReadLine();
-await subscriber.SubscribeAsync("channelName", (channel, message) =>
+await subscriber.SubscribeAsync(new RedisChannel("channelName", RedisChannel.PatternMode.Auto), (channel, message) =>
 {
     Console.WriteLine(message);
 });
