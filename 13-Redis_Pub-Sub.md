@@ -49,3 +49,10 @@ Bu durumda stock.a, stock.1, stock.x gibi kanallardan gelen mesajları alırken 
 Uygulanması kolaydır. Subscriber servis'de Subscribe metodu kullanılırken kanal adı yerine pattern belirtilir.Örneğin stock.* gibi.
 
 
+##### Powershell'den pattern matching ile subscribe işlemi
+Subscriber'larda :
+psubscribe mychannel:*  => komutu ile mychannel: ile başlayan tüm kanallara abone olabiliriz.
+psubscribe mychannel.x  => komutu ile mychannel.x gibi belirli bir pattern'a abone olabiliriz. Sadece mychannel.x kanalına gelen mesajları alır.
+
+Publisher'da :
+publish mychannel.x "mesajım"  => komutu ile mychannel.x kanalına mesajım mesajını yayınlamış olduk.mychannel.* de mesajı almış oldu.
